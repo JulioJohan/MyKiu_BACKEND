@@ -54,12 +54,12 @@ app.use('/api/tareas', tareaRoutes)
 
 
 //Esta variable es para cuando ya este en produccion
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 80;
 
 
 
 //Asignando el puerto de nuestro servidor
-const servidor = app.listen(4000, () =>{
+const servidor = app.listen(PORT, () =>{
     console.log(`Servidor Corriendo en el puerto ${PORT}`)
 });
 import {Server, Socket} from 'socket.io'
