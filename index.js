@@ -28,21 +28,21 @@ conectarDB();
 //Proteccion de ruta en el ENV
 const whitelist = [process.env.FRONTEND_URL];
 
-const corsOptions = {
-    //origen del request
-    //Callback que nos permitira el acceso
-    origin: function(origin,callback ){
-        //Si esta en la lista blanca puede consultar a la api
-        if(whitelist.includes(origin)){
-            //Puede consultar la APi
-            callback(null,true)
-        }else{
-            //No esta permitido el request
-            callback(new Error('Error de Cors'))
-        }
-    }
-}
-app.use(cors(corsOptions));
+// const corsOptions = {
+//     //origen del request
+//     //Callback que nos permitira el acceso
+//     origin: function(origin,callback ){
+//         //Si esta en la lista blanca puede consultar a la api
+//         if(whitelist.includes(origin)){
+//             //Puede consultar la APi
+//             callback(null,true)
+//         }else{
+//             //No esta permitido el request
+//             callback(new Error('Error de Cors'))
+//         }
+//     }
+// }
+app.use(cors(whitelist));
 //req son los datos que tu envias
 //res es la respuesta que estas obteniendo por esa peticion
 
