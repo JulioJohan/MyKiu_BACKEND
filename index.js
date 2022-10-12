@@ -42,7 +42,7 @@ const corsOptions = {
         }
     }
 }
-app.use(cors(whitelist));
+app.use(cors(corsOptions));
 //req son los datos que tu envias
 //res es la respuesta que estas obteniendo por esa peticion
 
