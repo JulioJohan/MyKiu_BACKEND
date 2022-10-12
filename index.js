@@ -28,6 +28,7 @@ conectarDB();
 //Proteccion de ruta en el ENV
 const whitelist = [process.env.FRONTEND_URL];
 
+// se comenta por error 
 // const corsOptions = {
 //     //origen del request
 //     //Callback que nos permitira el acceso
@@ -42,6 +43,7 @@ const whitelist = [process.env.FRONTEND_URL];
 //         }
 //     }
 // }
+//antes era app.use(cors(corsOption))
 app.use(cors(whitelist));
 //req son los datos que tu envias
 //res es la respuesta que estas obteniendo por esa peticion
